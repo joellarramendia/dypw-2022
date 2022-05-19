@@ -38,11 +38,18 @@
         echo "Se ha cargado una nueva persona";
 
       }
+      
 
-      /*$_SESSION['personas'][$dni]=$persona;
+      if(isset($_REQUEST['elimuar'])){
+          session_destroy();
+          header(localitation::formulario.php);
+      }
+      
 
-      echo '<pre>';
-      print_r($_SESSION);*/
+      $_SESSION['personas'][$dni]=$persona;
+
+      //echo '<pre>';
+     // print_r($_SESSION);
     }
 
     }
@@ -68,6 +75,7 @@
 
     <button type="sumbit" name="enviar">Enviar</button>
     <button type="sumbit" name="mostrar">Mostrar</button><br/>
+    <button type="sumbit" name="eliminar">Eliminar</button><br/>
 
     <?php
 
@@ -101,7 +109,7 @@
 
         echo "</table>";
       }
-      }
+    }   
 
 
     ?>
