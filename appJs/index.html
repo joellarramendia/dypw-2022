@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+    <!--Barra de navegacion para todos los elementos-->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" aria-current="page" id="personasList">Personas</a> <i class="bi bi-person"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="ciudadesList">Ciudades</a> <i class="bi bi-building"></i>
+                </li>
+                <form class="d-flex" style="margin-left: 560px;">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+            </div>
+        </nav>
+    </div>
+    
+    
+    
+    
+    <div class="container">
+        <h1>Bienvenido</h1>
+    </div>
+    <!--Div para cargar los datos de las personas -->
+    <div class="container" id="datosPersonas">
+        <button id="btNuevo" class="btn btn-success">Nuevo</button>
+        <button id="jsonPersonas" class="btn btn-primary">JSON</button>
+
+
+
+    </div>
+    <!--Formulario para agregar nuevos datos de personas -->
+    <form action="" method="post" id="formPersonas" class="container">
+        <div class="form-outline mb-4">
+            <!--campo oculto para el id -->
+            <input type="hidden" name="" id="id" class="form-control">
+            <!--Campo para el nro de documento-->
+            <label for="cin" class="form-control">Nro de Documento</label>
+            <input type="text" name="" id="cin" class="form-control" required>
+            <!--Campo para el apellido-->
+            <label for="apellido" class="form-control">Apellido</label>
+            <input type="text" name="" id="apellido" class="form-control" required>
+            <!--Campo para el nombre-->
+            <label for="nombre" class="form-control">Nombre</label>
+            <input type="text" name="" id="nombre" class="form-control" required>
+            <!--Campo para la fecha de nacimineto de tipo date para el calendario-->
+            <label for="fenac" class="form-control">Fecha de nacimiento</label>
+            <input type="date" name="" id="fenac" class="form-control" required>
+            <!--Boton para el envio del formulario-->
+            <button type="submit" id="btProcesar" class="btn btn-primary btn-block mb-4">Enviar</button> 
+            <button id="cancelFormPersonas" class="btn btn-secondary  btn-block mb-4">Cancelar</button>
+        </div>
+    </form>
+    <!--Div para contener los datos de las ciudades -->
+    <div class="container">
+        <div id="datosCiudades">
+
+        </div>
+        
+        <!--Div para contener el formulario de ciudades nuevas-->
+        <div id="formCiudades">
+            <h3>Ciudad</h3>
+            <form action="" method="post">
+                <!--campo oculpo para el id de la ciudad-->
+                <input type="hidden" name="" id="idx" class="form-control">
+                <!--Campo para el nombre de la ciudad-->
+                <label for="ciudad" class="form-control">Ciudad</label>
+                <input type="text" name="" id="ciudad" class="form-control" required>
+                <!--Boton para enviar el formulario-->
+                <button class="btn btn-primary" type="submit" id="enviarFormCiudad">Enviar</button>
+                <button id="cancelFormCiudad" class="btn btn-secondary">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</body>
+    <script  src="../node_modules/jquery/dist/jquery.js" ></script>
+    <script src="js/app.js" ></script>
+    <script src="js/ciudades.app.js" ></script>
+    <script src="js/ciudades.ui.js"></script>
+    <script src="js/personas.app.js" ></script>
+    <script src="js/personas.ui.js"></script>
+</html>
